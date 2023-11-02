@@ -34,8 +34,8 @@ public class CardDetailsHandler : ICardDetailsHandler
 
         return new CardDetailsModel
         {
-            Balance = balance,
-            Available = BusinessLogicConstants.MAX_CARD_LIMIT - balance,
+            Balance = Math.Round(balance, 2),
+            Available = Math.Round(BusinessLogicConstants.MAX_CARD_LIMIT - balance, 2),
             NoPaymentDue = $"You’ve paid your {CultureInfo.InvariantCulture.DateTimeFormat.GetMonthName(_systemClock.UtcNow.Month)} balance.",
             DailyPoints = _formatter.Format(dailyPoints),
         };

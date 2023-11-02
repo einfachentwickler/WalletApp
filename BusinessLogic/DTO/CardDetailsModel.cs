@@ -8,5 +8,5 @@ public class CardDetailsModel
 
     public string? NoPaymentDue { get; set; }
 
-    public string DailyPoints { get; set; }
+    public string? DailyPoints { get; set; }
 }
